@@ -32,10 +32,17 @@ print("shape", l0_data.shape)
 # print(l4_cnt)
 # print(l5_cnt)
 log.close()
+begin_idx = 2200
+end_idx = 2850
+l0_data = np.delete(l0_data, slice(end_idx, l0_data.shape[0]), axis=0)
+l0_data = np.delete(l0_data, slice(0, begin_idx), axis=0)
 # plt.figure(figsize=(30, 6), dpi=100, facecolor='w', edgecolor='k')
+plt.plot(l0_data[:, 0])
 plt.plot(l0_data[:, 1])
+plt.plot(l0_data[:, 2])
 plt.ylabel('rpy')
 
 
 
 plt.show()
+np.savetxt("/home/yyj/logRobot/01142104f_imu.csv", l0_data, delimiter=",")
