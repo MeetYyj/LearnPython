@@ -70,8 +70,8 @@ print("shape", l2_data.shape)
 print("shape", l3_data.shape)
 print("shape", l4_data.shape)
 print("shape", l5_data.shape)
-begin_idx = 2200
-end_idx = 2850
+begin_idx = 00
+end_idx = 25000
 l0_data = np.delete(l0_data, slice(end_idx, l0_data.shape[0]), axis=0)
 l0_data = np.delete(l0_data, slice(0, begin_idx), axis=0)
 l1_data = np.delete(l1_data, slice(end_idx, l1_data.shape[0]), axis=0)
@@ -93,32 +93,32 @@ log.close()
 plt.subplot(6, 1, 1)
 # plt.figure(figsize=(30, 6), dpi=100, facecolor='w', edgecolor='k')
 plt.plot(l0_data[:, 2])
-plt.ylabel('leg_0 xyz')
+plt.ylabel('l0')
 
 plt.subplot(6, 1, 2)
 # plt.figure(figsize=(30, 6), dpi=100, facecolor='w', edgecolor='k')
 plt.plot(l1_data[:, 2])
-plt.ylabel('leg_1 xyz')
+plt.ylabel('l1')
 
 plt.subplot(6, 1, 3)
 # plt.figure(figsize=(30, 6), dpi=100, facecolor='w', edgecolor='k')
 plt.plot(l2_data[:, 2])
-plt.ylabel('leg_2 xyz')
+plt.ylabel('l2')
 
 plt.subplot(6, 1, 4)
 # plt.figure(figsize=(30, 6), dpi=100, facecolor='w', edgecolor='k')
 plt.plot(l3_data[:, 2])
-plt.ylabel('leg_3 xyz')
+plt.ylabel('l3')
 
 plt.subplot(6, 1, 5)
 # plt.figure(figsize=(30, 6), dpi=100, facecolor='w', edgecolor='k')
 plt.plot(l4_data[:, 2])
-plt.ylabel('leg_4 xyz')
+plt.ylabel('l4')
 
 plt.subplot(6, 1, 6)
 # plt.figure(figsize=(30, 6), dpi=100, facecolor='w', edgecolor='k')
 plt.plot(l5_data[:, 2])
-plt.ylabel('leg_5 xyz')
+plt.ylabel('l5')
 plt.show()
 
 l_all_data = np.concatenate((l0_data, l1_data), axis=1)
@@ -127,7 +127,7 @@ l_all_data = np.concatenate((l_all_data, l3_data), axis=1)
 l_all_data = np.concatenate((l_all_data, l4_data), axis=1)
 l_all_data = np.concatenate((l_all_data, l5_data), axis=1)
 
-np.savetxt("/home/yyj/logRobot/01142104f_l_all.csv", l_all_data, delimiter=",")
+np.savetxt("/home/yyj/logRobot/01151415_l_all.csv", l_all_data, delimiter=",")
 
 
 # plt.plot(l0_data[:, 2])
